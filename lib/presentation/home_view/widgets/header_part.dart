@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../resources/assets_manager.dart';
+import '../../resources/assets_manage.dart';
 import '../../resources/colors.dart';
 import 'curved_edges.dart';
 

@@ -64,6 +64,7 @@ dependencies:
   faker: ^2.1.0
   another_flutter_splash_screen: ^1.2.1
   flutter_launcher_icons: ^0.13.1
+  smooth_page_indicator: ^1.2.0+3
 
 dev_dependencies:
   flutter_test:

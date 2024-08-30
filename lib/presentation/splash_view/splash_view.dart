@@ -5,7 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:another_flutter_splash_screen/another_flutter_splash_screen.dart';
 
 import '../home_view/home_view.dart';
-import '../resources/assets_manager.dart';
+import '../resources/assets_manage.dart';
 import '../resources/colors.dart';
 
 class SplashView extends HookConsumerWidget {
@@ -14,7 +14,6 @@ class SplashView extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     useEffect(() {
       Future.delayed(Duration.zero, () {
-        //  Locale myLocale = Localizations.localeOf(context);
         ref
             .read(getAllProductDetailStateNotifierProvider.notifier)
             .getAllProductDetail();
@@ -35,8 +34,8 @@ class SplashView extends HookConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(
-              height: 200,
-              width: 200,
+              height: 100,
+              width: 100,
               child: Center(
                 child: Image.asset(
                   ImageAssets.splashLogo,

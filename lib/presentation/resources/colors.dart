@@ -6,7 +6,7 @@ class AColors {
   //
 
   static const Color primaryBackgroundColor = Color.fromRGBO(249, 249, 249, 1);
-  static const Color primaryGreenColor = Color.fromRGBO(95, 206, 26, 1);
+  static const Color primaryGreenColor = Color.fromRGBO(179, 219, 208, 1);
   static const Color borderColor = Color.fromRGBO(204, 204, 204, 1);
 
   // Text Colors ------------------------------------------
