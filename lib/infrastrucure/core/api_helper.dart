@@ -3,7 +3,7 @@ import 'package:fluttertask/util/config/config.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../application/app_state/app_state.dart';
 import '../../util/app_utils.dart';
-import '../../util/log_util/log_utils.dart';
+import '../../presentation/resources/log_utils.dart';
 import 'base_request_response.dart';
 import 'providers.dart';
 

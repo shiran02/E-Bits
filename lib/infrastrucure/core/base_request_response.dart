@@ -7,7 +7,7 @@ part 'base_request_response.g.dart';
 class BaseResponse with _$BaseResponse {
   factory BaseResponse({
     @Default(false) bool success,
-    List<dynamic>? data,
+    Map<String, dynamic>? data,
     String? info,
     String? error,
     @Default(200) int code,

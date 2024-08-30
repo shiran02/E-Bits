@@ -1,6 +1,6 @@
 import 'dart:developer' as dev;
 
-import '../config/config.dart';
+import '../../util/config/config.dart';
 
 class LogUtils {
   LogUtils({

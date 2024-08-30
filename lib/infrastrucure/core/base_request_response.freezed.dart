@@ -21,7 +21,7 @@ BaseResponse _$BaseResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$BaseResponse {
   bool get success => throw _privateConstructorUsedError;
-  List<dynamic>? get data => throw _privateConstructorUsedError;
+  Map<String, dynamic>? get data => throw _privateConstructorUsedError;
   String? get info => throw _privateConstructorUsedError;
   String? get error => throw _privateConstructorUsedError;
   int get code => throw _privateConstructorUsedError;
@@ -40,7 +40,7 @@ abstract class $BaseResponseCopyWith<$Res> {
   @useResult
   $Res call(
       {bool success,
-      List<dynamic>? data,
+      Map<String, dynamic>? data,
       String? info,
       String? error,
       int code});
@@ -73,7 +73,7 @@ class _$BaseResponseCopyWithImpl<$Res, $Val extends BaseResponse>
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>?,
+              as Map<String, dynamic>?,
       info: freezed == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -100,7 +100,7 @@ abstract class _$$BaseResponseImplCopyWith<$Res>
   @useResult
   $Res call(
       {bool success,
-      List<dynamic>? data,
+      Map<String, dynamic>? data,
       String? info,
       String? error,
       int code});
@@ -131,7 +131,7 @@ class __$$BaseResponseImplCopyWithImpl<$Res>
       data: freezed == data
           ? _value._data
           : data // ignore: cast_nullable_to_non_nullable
-              as List<dynamic>?,
+              as Map<String, dynamic>?,
       info: freezed == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
@@ -153,7 +153,7 @@ class __$$BaseResponseImplCopyWithImpl<$Res>
 class _$BaseResponseImpl implements _BaseResponse {
   _$BaseResponseImpl(
       {this.success = false,
-      final List<dynamic>? data,
+      final Map<String, dynamic>? data,
       this.info,
       this.error,
       this.code = 200})
@@ -165,14 +165,14 @@ class _$BaseResponseImpl implements _BaseResponse {
   @override
   @JsonKey()
   final bool success;
-  final List<dynamic>? _data;
+  final Map<String, dynamic>? _data;
   @override
-  List<dynamic>? get data {
+  Map<String, dynamic>? get data {
     final value = _data;
     if (value == null) return null;
-    if (_data is EqualUnmodifiableListView) return _data;
+    if (_data is EqualUnmodifiableMapView) return _data;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableMapView(value);
   }
 
   @override
@@ -222,7 +222,7 @@ class _$BaseResponseImpl implements _BaseResponse {
 abstract class _BaseResponse implements BaseResponse {
   factory _BaseResponse(
       {final bool success,
-      final List<dynamic>? data,
+      final Map<String, dynamic>? data,
       final String? info,
       final String? error,
       final int code}) = _$BaseResponseImpl;
@@ -233,7 +233,7 @@ abstract class _BaseResponse implements BaseResponse {
   @override
   bool get success;
   @override
-  List<dynamic>? get data;
+  Map<String, dynamic>? get data;
   @override
   String? get info;
   @override

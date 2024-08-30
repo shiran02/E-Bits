@@ -6,7 +6,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../../domain/core/failure.dart';
 import '../../domain/core/i_local_repository.dart';
 import '../../domain/core/storage_failure.dart';
-import '../../util/log_util/log_utils.dart';
+import '../../presentation/resources/log_utils.dart';
 
 class LocalRepository extends ILocalRepository {
   LocalRepository(this.storage);

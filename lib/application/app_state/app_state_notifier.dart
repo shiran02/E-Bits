@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:fluttertask/util/log_util/log_utils.dart';
+import 'package:fluttertask/presentation/resources/log_utils.dart';
 import 'package:fluttertask/util/string_extensions.dart';
 
 import 'package:hooks_riverpod/hooks_riverpod.dart';

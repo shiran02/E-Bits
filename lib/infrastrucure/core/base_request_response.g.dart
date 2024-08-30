@@ -9,7 +9,7 @@ part of 'base_request_response.dart';
 _$BaseResponseImpl _$$BaseResponseImplFromJson(Map<String, dynamic> json) =>
     _$BaseResponseImpl(
       success: json['success'] as bool? ?? false,
-      data: json['data'] as List<dynamic>?,
+      data: json['data'] as Map<String, dynamic>?,
       info: json['info'] as String?,
       error: json['error'] as String?,
       code: (json['code'] as num?)?.toInt() ?? 200,
