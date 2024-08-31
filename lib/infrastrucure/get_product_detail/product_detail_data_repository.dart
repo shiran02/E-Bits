@@ -27,20 +27,7 @@ class GetAllProductDataReository implements IGetProductDetailRepository {
         method: RestMethods.get,
       );
 
-      // _logUtils
-      //     .log("::::  Value : data: response of GetAll Product :: ${res.data}");
-      // _logUtils.log(
-      //     "::::  Value : success : response of GetAll Product :: ${res.success}");
-
       if (res.success) {
-        final Map<String, dynamic>? dataList =
-            res.data as Map<String, dynamic>?;
-
-        // _logUtils
-        //     .log("::::  Value : data: dataList :: ${dataList?['products']}");
-
-        _logUtils.log("::::  Value : data: dataList :: ${dataList}");
-
         return right(
             ProductDetailResponseDto.fromJson(res.data as Map<String, dynamic>)
                 .toDomain());
