@@ -57,6 +57,51 @@ class LoginView extends HookConsumerWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    InkWell(
+                      onTap: () {
+                        Get.off(
+                          () => HomeView(),
+                          transition: Transition.downToUp,
+                        );
+                      },
+                      child: Container(
+                        height: 50,
+                        width: w,
+                        decoration: const BoxDecoration(
+                          color: AColors.black,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                        ),
+                        child: Center(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Icon(
+                                  Icons.home,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              Text(
+                                AppStrings.goHome,
+                                style: const TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    const SizedBox(
+                      height: GSizes.spaceBtwItems,
+                    ),
+
                     Text(
                       AppStrings.loginAccount,
                       style: const TextStyle(
@@ -150,10 +195,11 @@ class LoginView extends HookConsumerWidget {
 
                     InkWell(
                       onTap: () {
-                        Get.off(
-                          () => HomeView(),
-                          //transition: Transition.downToUp,
-                        );
+                        // ref
+                        //     .read(getAllProductDetailStateNotifierProvider
+                        //         .notifier)
+                        //     .registerWithEmailAndPassword(
+                        //         emailController.text, passwordController.text);
                       },
                       child: Container(
                         height: 50,

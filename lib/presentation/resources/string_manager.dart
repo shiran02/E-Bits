@@ -5,6 +5,7 @@ class AppStrings {
 
   //login screen strings -------------------
   static String loginAccount = 'Login your account';
+  static String goHome = 'Go To Home';
   static String welcome = 'Well Come';
   static String email = 'Email';
   static String password = 'Password';

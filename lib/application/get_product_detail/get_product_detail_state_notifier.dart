@@ -3,7 +3,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fluttertask/application/get_product_detail/get_product_detail_state.dart';
 import 'package:fluttertask/domain/core/core_failure.dart';
 import 'package:fluttertask/domain/get_products_detail/i_get_product_detail_repository.dart';
+import 'package:fluttertask/presentation/home_view/home_view.dart';
 import 'package:fluttertask/presentation/resources/log_utils.dart';
+import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -53,6 +55,55 @@ class GetAllProductDetailStateNotifier
       final User? user = userCredential.user;
 
       String? userEmail = user!.email;
+    } catch (e) {
+      state = state.copyWith(
+        responseFailure:
+            optionOf(Failure.core(CoreFailure.somethingWentWrong(e))),
+      );
+    }
+  }
+
+  Future<void> registerWithEmailAndPassword(
+      String email, String password) async {
+    try {
+      state = state.copyWith(
+        responseFailure: none(),
+      );
+
+      final UserCredential userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+              email: 'shiran@gmail.com', password: '1234');
+
+      final User? user = userCredential.user;
+
+      if (user != null) {
+        String? userEmail = user.email;
+
+        Get.off(() => HomeView());
+      } else {
+        throw Exception('Failed to register with email and password');
+      }
+    } on FirebaseAuthException catch (e) {
+      String errorMessage;
+
+      switch (e.code) {
+        case 'email-already-in-use':
+          errorMessage = 'The email address is already in use.';
+          break;
+        case 'weak-password':
+          errorMessage = 'The password is too weak.';
+          break;
+        case 'invalid-email':
+          errorMessage = 'The email address is not valid.';
+          break;
+        default:
+          errorMessage = 'Something went wrong. Please try again later.';
+      }
+
+      state = state.copyWith(
+        responseFailure: optionOf(
+            Failure.core(CoreFailure.somethingWentWrong(errorMessage))),
+      );
     } catch (e) {
       state = state.copyWith(
         responseFailure:
